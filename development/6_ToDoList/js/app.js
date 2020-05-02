@@ -1,81 +1,54 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let btnAdd = document.querySelector("#addTaskButton");
-    console.log(btnAdd);
-    let btnRemove = document.getElementById("removeFinishedTasksButton");
-    console.log(btnRemove);
-    let taskInput = document.querySelector('#taskInput');
+    const input = document.querySelector('#taskInput');
+    const addTaskBtn = document.querySelector('#addTaskButton');
+    const removeButton = document.querySelector('#removeFinishedTasksButton');
 
-    let counter = 0;
+    addTaskBtn.addEventListener('click', function (event) {
+        const newLi = document.createElement('li');
+        const newH1 = document.createElement('h1');
+        const newDeleteBtn = document.createElement('button');
+        const newCompleteBtn = document.createElement('button');
+        const placeToInsert = document.querySelector('#taskList');
 
-    btnAdd.addEventListener("click", function (event) {
-        //stworzenie zadania
-        if (taskInput.value.length > 5 && taskInput.value.length < 100) {
+        if (input.value.length > 5 && input.value.length < 100) {
+            newH1.innerText = input.value;
+            newDeleteBtn.innerText = "Delete";
+            newCompleteBtn.innerText = "Complete";
+            newDeleteBtn.classList.add('delete');
+            newCompleteBtn.classList.add("complete");
 
-            let li = document.createElement("li");
-            li.className = "task";
-            li.innerText = taskInput.value;
-            li.style.fontSize = "20px";
-            li.style.fontWeight = "bold";
+            newLi.appendChild(newH1);
+            newLi.appendChild(newDeleteBtn);
+            newLi.appendChild(newCompleteBtn);
+            placeToInsert.appendChild(newLi);
 
-            let div = document.createElement('div');
-            div.className = "btns";
-
-            let btnDelete = document.createElement("button");
-            btnDelete.innerText = "Usuń zadanie";
-            btnDelete.style.width = "120px";
-            btnDelete.style.height = "20px";
-            btnDelete.style.margin = "10px";
-
-            let btnComplete = document.createElement("button");
-            btnComplete.style.width = "120px";
-            btnComplete.style.height = "20px";
-            btnComplete.style.margin = "10px";
-            btnComplete.innerText = "Zakończone";
-
-            this.parentElement.appendChild(li);
-            li.appendChild(div);
-            li.appendChild(btnDelete);
-            li.appendChild(btnComplete);
-            counter++;
-            console.log(counter);
-            li.innerText = taskInput.value +" "+counter;
-
-            // nowy event usuwanie zadań
-
-        btnDelete.addEventListener("click", function (event) {
-            this.parentElement.parentElement.removeChild(this.parentElement);
-        });
-        // zadnia completne
-        btnComplete.addEventListener("click", function (event) {
-            if (this.parentElement.style.backgroundColor === "white") {
-                this.parentElement.style.backgroundColor = "green"
-            } else this.parentElement.style.backgroundColor = "white"
-
-        }) } else {
-            console.log("niepoprawne dane")
+        } else {
+            console.log("Min 5 znaków Max 100 znaków")
         }
 
+        input.value = "";
+        newDeleteBtn.addEventListener('click', function (event) {
+            const elemToRemove = this.parentElement;
+            elemToRemove.parentElement.removeChild(elemToRemove);
+
+        });
+        newCompleteBtn.addEventListener('click', function (event) {
+            const elemToColor = this.previousElementSibling.previousElementSibling;
+            elemToColor.classList.toggle('red');
+
+        })
+
     });
-
-    taskInput.innerText = "";
-
-
-
-    btnRemove.addEventListener("click", function (event) {
-        let task = document.querySelectorAll('.task');
-        console.log(task);
-        task.forEach(function (element) {
-            if (element.style.backgroundColor === "green") {
-                element.parentElement.removeChild(element)
-            } else {
-                console.log("brak aktywnych zadań")
+    removeButton.addEventListener('click', function (event) {
+        const elementsToDelete = document.querySelectorAll('.red');
+        elementsToDelete.forEach(function (value) {
+            if (value !== null ) {
+                const elementToDelete = value.parentElement;
+                elementToDelete.parentElement.removeChild(elementToDelete);
             }
         })
 
 
-
-});
-
-
+    })
 
 });

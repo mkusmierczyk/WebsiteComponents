@@ -1,0 +1,247 @@
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+/* header */
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #282828;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+    position: absolute;
+
+    z-index: 4;
+
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-logo {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 3px gray;
+    display: block;
+    line-height: 80px;
+}
+
+.page-nav-list {
+    display: flex;
+}
+
+.page-nav-list li {
+    margin-right: 40px;
+}
+
+.page-nav-list a {
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 80px;
+    display: block;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px gray;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+main {
+    width: 100%;
+    display: flex;
+}
+
+.leftBar {
+    width: 25%;
+    height: 100vh;
+    background-color: #282828;
+    box-shadow: 1px 1px 3px 3px gray;
+}
+
+.toDoList {
+    background-color: rgb(23, 23, 23);
+    width: 75%;
+    height: 100vh;
+}
+
+.toDoList .container {
+    padding-top: 7%;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-task-section {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.new-task-section input {
+    flex-grow: 4;
+    padding: 20px 5px 20px 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: black;
+    color: white;
+    font-family:'Montserrat', sans-serif;
+    font-size: 16px;
+    outline: none;
+}
+
+.new-task-section button {
+    flex-grow: 1;
+    padding: 20px 30px 20px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: tomato;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.task-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    height: 500px;
+}
+
+.taskList {
+    width: 100%;
+    overflow: auto;
+}
+
+.taskList li {
+    width: 100%;
+    margin-top:  30px;
+    display: flex;
+
+
+}
+
+.taskList h1 {
+    width: 60%;
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 5px gray;
+    align-self: center;
+
+}
+
+.delete {
+    width: 20%;
+    display: block;
+    padding: 15px 10px 15px 10px;
+    background-color: tomato;
+    font-size: 1rem;
+    color: blanchedalmond;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    align-self: center;
+    justify-self: center;
+    margin-right: 10px;
+
+}
+
+.complete {
+    width: 20%;
+    display: block;
+    padding: 15px 10px 15px 10px;
+    background-color: tomato;
+    font-size: 1rem;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    align-self: center;
+    justify-self: center;
+
+
+}
+
+.remove-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.removeButton {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    background-color: tomato;
+    border-radius: 10px;
+    padding: 10px 25px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 1px 2px 2px #7f7f7f;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+}
+
+.removeButton:hover {
+    background-color: white;
+    color: tomato;
+}
+
+.removeButton:focus{
+    outline: none;
+    border: 2px solid #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.taskList .red {
+    color: tomato;
+}
+
+.containerOne {
+    margin: 0 auto;
+    border: 1px solid red;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+li {
+    list-style-type: none;
+}
+
+

@@ -1,40 +1,25 @@
-let prev = document.querySelector('#prevPicture');
-let next = document.querySelector('#nextPicture');
-let htmlElem = document.querySelectorAll('ul');
+document.addEventListener('DOMContentLoaded', function () {
+    const buttonNext = document.querySelector('#nextPicture');
+    const buttonPrev = document.querySelector('#prevPicture');
+    const listElements = document.querySelectorAll('li');
+    let photoCounter = 0;
+    listElements[photoCounter].classList.add('visible');
 
-
-let list = document.querySelector('ul').children;
-let picCounter = 0;
-let htmlElem = Array.from(list);
-htmlElem.forEach(function (elem) {
-    if (elem.style.display === "inline-block") {
-        pickCounter = elem [i];
-    }
+    buttonNext.addEventListener('click', function (event) {
+        listElements[photoCounter].classList.remove('visible');
+        photoCounter += 1;
+        if (photoCounter > listElements.length - 1) {
+            photoCounter = 0;
+        }
+        listElements[photoCounter].classList.add('visible');
+    });
+    buttonPrev.addEventListener('click', function (event) {
+        listElements[photoCounter].classList.remove('visible');
+        photoCounter -= 1;
+        if (photoCounter < 0) {
+            photoCounter = listElements.length - 1;
+        }
+        listElements[photoCounter].classList.add('visible');
+    })
 
 });
-htmlElem[0].classList.add['visible'];
-
-prev.addEventListener('click', function () {
-    console.log('click1');
-    htmlElem[pickCounter].classList.add('visible');
-});
-next.addEventListener('click', function () {
-    console.log('click2');
-
-    htmlElem[pickCounter].classList.remove('visible');
-    pickCounter += 1;
-    if (picCounter === htmlElem.length) {
-        pickCounter = 0;
-    }
-    htmlElem[picCounter].classList
-});
-
-})
-
-
-
-
-
-
-
-
