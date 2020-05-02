@@ -11,7 +11,7 @@
 * [Contact](#contact)
 
 ## General info
-Here you can see basic components written in Vanilla HTML 5, CSS4 andJavaScript. 
+Here you can see basic components written in Vanilla HTML 5, CSS4 and JavaScript. 
 
 ## Screenshots
 ###Slider
